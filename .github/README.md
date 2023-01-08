@@ -5,7 +5,7 @@ https://ohmyz.sh/
 
 ## Creating a new repo and pushing files
 The repo will be initialized in the $HOME/.dotfiles/ folder with its working path for scanning being $HOME/ directory. We are going to use an alias dot for running git from this repo.
-'''bash
+```bash
 #!/usr/bin/env bash
 
 # Let's create a new directory to store Git files 
@@ -31,10 +31,10 @@ dotfiles branch -M main
 dot add .zshrc
 dot commit -m "add .zshrc"
 dot push -u origin main
-'''
+```
 
 ## Clone and setup existing repo for the new installation
-'''bash
+```bash
 #!/usr/bin/env bash
 
 # Let's create a new directory to store Git files 
@@ -64,5 +64,5 @@ dotfiles status
 # Ignore local version of '.zshrc' and use the remote instead
 dotfiles restore .zshrc
 source $HOME/.zshrc
-'''
+```
 Instructions based on [this post](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/)
