@@ -1,4 +1,4 @@
-# Install Oh my zsh! and sync the settings with GitHub
+# Track your dotfiles with Git and sync using bare repo
 
 > Get Oh My Zsh 👉 https://ohmyz.sh/
 
