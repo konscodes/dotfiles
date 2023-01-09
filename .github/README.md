@@ -1,7 +1,6 @@
 # Install Oh my zsh! and sync the settings with GitHub
 
-## Get Oh My Zsh
-https://ohmyz.sh/
+> Get Oh My Zsh 👉 https://ohmyz.sh/
 
 ## Creating a new repo and pushing files
 The repo will be initialized in the $HOME/.dotfiles/ folder with its working path for scanning being $HOME/ directory. We are going to use an alias dot for running git from this repo.
