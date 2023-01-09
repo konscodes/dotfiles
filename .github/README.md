@@ -65,4 +65,4 @@ dotfiles status
 dotfiles restore .zshrc
 source $HOME/.zshrc
 ```
-Instructions based on [this post](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/)
+Instructions based on [this post](https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
