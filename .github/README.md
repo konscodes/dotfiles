@@ -14,7 +14,7 @@ mkdir $HOME/.dotfiles
 git init --bare $HOME/.dotfiles
 
 # Create an alias called 'dot' for running Git commands in the '$HOME/.dotfiles' repository
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'" >> $HOME/.zshrc
+echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'" >> $HOME/.zshrc
 
 # Run 'source' command to update the config
 source $HOME/.zshrc
@@ -46,7 +46,7 @@ echo ".dotfiles" >> .gitignore
 git clone --bare <remote-git-repo-url> $HOME/.dotfiles
 
 # Create an alias called 'dot' for running Git commands in the '$HOME/.dotfiles' repository
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'" >> $HOME/.zshrc
+echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'" >> $HOME/.zshrc
 
 # Run 'source' command to update the config
 source $HOME/.zshrc
