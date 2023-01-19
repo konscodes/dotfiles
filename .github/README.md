@@ -43,7 +43,7 @@ mkdir $HOME/.dotfiles
 echo ".dotfiles" >> .gitignore
 
 # Clone Git repository
-git clone --bare <remote-git-repo-url> $HOME
+git clone --bare <remote-git-repo-url> $HOME/.dotfiles
 
 # Create an alias called 'dot' for running Git commands in the '$HOME/.dotfiles' repository
 echo "alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'" >> $HOME/.zshrc
