@@ -27,9 +27,9 @@ dotfiles remote add origin 'https://github.com/<user>/<repo>.git'
 dotfiles branch -M main
 
 # Add/Commit/Push changes as usual with ‘dotfiles’ command
-dot add .zshrc
-dot commit -m "add .zshrc"
-dot push -u origin main
+dotfiles add .zshrc
+dotfiles commit -m "add .zshrc"
+dotfiles push -u origin main
 ```
 
 ## Clone and setup existing repo for the new installation
@@ -46,7 +46,7 @@ echo ".dotfiles" >> .gitignore
 git clone --bare <remote-git-repo-url> $HOME/.dotfiles
 
 # Create an alias called 'dot' for running Git commands in the '$HOME/.dotfiles' repository
-echo "alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'" >> $HOME/.zshrc
+echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'" >> $HOME/.zshrc
 
 # Run 'source' command to update the config
 source $HOME/.zshrc
