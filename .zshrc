@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode python)
+plugins=(git vscode python z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,3 +102,4 @@ source $ZSH/oh-my-zsh.sh
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias py='python.exe'
 alias ll='exa -lah'
+alias excel='/mnt/c/Program\ Files/Microsoft\ Office/Office15/EXCEL.EXE'
