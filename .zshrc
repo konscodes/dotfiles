@@ -99,7 +99,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Add dotfiles alias for bare git repo
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Windows python instance for WSL
 alias py='python.exe'
-alias ll='exa -lah'
+# Modern replacement for ls
+alias ll='exa -lah --icons'
+# Excel alias for WSL
 alias excel='/mnt/c/Program\ Files/Microsoft\ Office/Office15/EXCEL.EXE'
+# Replace vim with nvim
+alias vim='nvim'
