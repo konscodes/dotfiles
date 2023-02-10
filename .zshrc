@@ -99,16 +99,25 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# Add dotfiles alias for bare git repo
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-# Windows python instance for WSL
-alias py='python.exe'
-# Modern replacement for ls
-alias ll='exa -lah --icons'
-# Excel alias for WSL
-alias excel='/mnt/c/Program\ Files/Microsoft\ Office/Office15/EXCEL.EXE'
-# Replace vim with nvim
-alias vim='nvim'
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' # Git alias for config repo
+alias py='python3' # Windows python instance for WSL
+alias winpy='python.exe' # Local python instance
+alias ll='exa -lah --icons' # Modern replacement for ls 
+alias excel='/mnt/c/Program\ Files/Microsoft\ Office/Office15/EXCEL.EXE' # Excel alias for WSL
+alias vim='nvim' # Replace vim with nvim
 
 # Key bindings
-bindkey '^a' autosuggest-accept  # ctrl + a
+bindkey '^a' autosuggest-accept # ctrl + a
+bindkey '^]' peco-projects # ctrl + ]
+
+# Integration ghq + peco search and move to repo
+function peco-projects () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-projects
