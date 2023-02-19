@@ -121,3 +121,9 @@ function peco-projects () {
     zle clear-screen
 }
 zle -N peco-projects
+
+# Created by `pipx` on 2023-02-13 11:05:53
+export PATH="$PATH:/Users/kons/.local/bin"
+
+# Run the note with glow on terminal start
+glow $HOME/note.md
