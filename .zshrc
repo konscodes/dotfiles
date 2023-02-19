@@ -4,6 +4,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Created by `pipx` on 2023-02-13 11:05:53
+export PATH="$PATH:$HOME/.local/bin"
+
+# For apps build with Go
+export PATH="$PATH:$HOME/go/bin"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -122,8 +128,5 @@ function peco-projects () {
 }
 zle -N peco-projects
 
-# Created by `pipx` on 2023-02-13 11:05:53
-export PATH="$PATH:/Users/kons/.local/bin"
-
 # Run the note with glow on terminal start
-glow $HOME/note.md
+glow $HOME/notes/modt.md
