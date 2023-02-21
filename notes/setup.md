@@ -2,13 +2,14 @@
 Ideally this needs to become a script in a future that will deploy the packages and settings automatically depending on the OS.
 
 ### Packages to install
-1. [ghq](https://www.notion.so/konscodes/Peco-and-ghq-for-repo-management-f51261a30456423fa8e0827631bc6943?pvs=4) for git repo management
+1. [ghq](https://t.ly/uEic) for git repo management
 
 ### Settings
 1. Add symlink for ```python``` to point to ```python3```
-    ```bash
-    ln -s python3 /bin/usr/python
-    ```
+
+```bash
+ln -s python3 /bin/usr/python
+```
 
 ### TO DO
 - [ ] setup nvim to wrap the text for .md files
