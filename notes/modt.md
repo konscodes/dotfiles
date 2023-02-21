@@ -4,5 +4,5 @@
 - [ ] Create a Flask application 
 
 ## To do 
-- contunue the tutorial
-https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+- [ ] contunue the tutorial
+https://t.ly/8aO3
