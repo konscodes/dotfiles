@@ -113,10 +113,6 @@ alias ll='exa -lah --icons' # Modern replacement for ls
 alias excel='/mnt/c/Program\ Files/Microsoft\ Office/Office15/EXCEL.EXE' # Excel alias for WSL
 alias vim='nvim' # Replace vim with nvim
 
-# Key bindings
-bindkey '^a' autosuggest-accept # ctrl + a
-bindkey '^]' peco-projects # ctrl + ]
-
 # Integration ghq + peco search and move to repo
 function peco-projects () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
@@ -127,6 +123,19 @@ function peco-projects () {
     zle clear-screen
 }
 zle -N peco-projects
+
+# Integration history + peco search and execute
+function peco-select-history() {
+  BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+
+# Key bindings
+bindkey '^a' autosuggest-accept # ctrl + a
+bindkey '^]' peco-projects # ctrl + ]
+bindkey '^[' peco-select-history # ctrl + [
 
 # Run the note with glow on terminal start
 glow $HOME/notes/modt.md
