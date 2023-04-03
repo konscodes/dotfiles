@@ -44,8 +44,8 @@ install_dotfiles () {
   echo ".dotfiles" >> .gitignore
   git clone --bare https://github.com/konscodes/dotfiles.git $HOME/.dotfiles
   $DOTFILES_GIT_CMD config --local status.showUntrackedFiles no
-  $DOTFILES_GIT_CMD checkout
-  $DOTFILES_GIT_CMD restore .zshrc
+  $DOTFILES_GIT_CMD restore --staged .
+  $DOTFILES_GIT_CMD restore .
   $DOTFILES_GIT_CMD status
 }
 
