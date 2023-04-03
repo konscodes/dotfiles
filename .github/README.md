@@ -2,6 +2,11 @@
 
 > Get Oh My Zsh 👉 https://ohmyz.sh/
 
+## Get started with the bash script
+```bash
+curl -sSL https://raw.githubusercontent.com/konscodes/dotfiles/ce5bd5d797c324b1ee4401bedac1106e015d34dc/install.sh | bash
+```
+
 ## Creating a new repo and pushing files
 The repo will be initialized in the $HOME/.dotfiles/ folder with its working path for scanning being $HOME/ directory. We are going to use an alias dot for running git from this repo.
 ```bash
