@@ -55,5 +55,5 @@ install_dotfiles () {
 info 'runnning the script'
 install_dotfiles
 
-# Change default shell to zsh
-sudo chsh -s $(which zsh) $USER
+# Run zsh
+zsh
