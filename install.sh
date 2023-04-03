@@ -47,8 +47,13 @@ install_dotfiles () {
   $DOTFILES_GIT_CMD restore --staged .
   $DOTFILES_GIT_CMD restore .
   $DOTFILES_GIT_CMD status
+  success
 }
 
 
 # Run functions
 info 'runnning the script'
+install_dotfiles
+
+# Run zsh
+zsh
