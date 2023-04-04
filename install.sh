@@ -26,18 +26,6 @@ fail () {
 
 
 # Create main functions
-install_zsh() {
-  info 'installing zsh'
-  # Install zsh on Ubuntu
-  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-      sudo apt-get update
-      sudo apt-get install -y zsh
-  # Install zsh on macOS using Homebrew
-  elif [[ "$OSTYPE" == "darwin"* ]]; then
-      brew install zsh
-  fi
-}
-
 install_dotfiles () {
   info 'installing dotfiles'
   mkdir $HOME/.dotfiles
@@ -50,10 +38,56 @@ install_dotfiles () {
   success
 }
 
+install_packets_linux() {
+  info 'Uptating sources'
+  sudo apt update
+  sudo apt install zsh
+
+  info 'Installing Oh My Zsh'
+  /bin/bash -c "$(curl -fsSL \
+  https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  info 'Installing exa'
+  curl http://ftp.jp.debian.org/debian/pool/main/r/rust-exa/exa_0.9.0-5+b1_amd64.deb | sudo dpkg -i -
+
+}
+
+# Function to check if Homebrew is installed
+check_homebrew() {
+  info 'Checking if Homebrew is installed'
+  if ! command -v brew &> /dev/null
+  then
+      return 1
+  fi
+  return 0
+}
+
+install_packets_mac() {
+  info 'Installing Homebrew'
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL \
+  https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if ! check_homebrew; then
+    fail 'homebrew installation failed'
+  fi
+  
+  info 'Installing Oh My Zsh'
+  /bin/bash -c "$(curl -fsSL \
+  https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  info 'Installing exa'
+  brew install exa
+}
+
 
 # Run functions
-info 'runnning the script'
+info 'Installing dotfiles'
 install_dotfiles
 
-# Run zsh
-zsh
+info 'Installing packets'
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    info 'Linux detected'
+    install_packets_linux
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    info 'MacOS detected'
+    install_packets_mac
+fi
