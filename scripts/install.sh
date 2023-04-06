@@ -7,7 +7,7 @@ cd $HOME
 # Set environment variables
 DOTFILES_ROOT=$(pwd -P)
 DOTFILES_GIT_CMD="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-
+ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
 # Create information output functions
 info () {
@@ -44,6 +44,7 @@ install_dotfiles () {
 
 install_packets() {
   info 'Installing Oh My Zsh'
+  # Check if Oh My Zsh is already installed
   if [ -d "$HOME/.oh-my-zsh" ]; then
     success 'The .oh-my-zsh exists in the home directory'
   else
@@ -51,20 +52,23 @@ install_packets() {
     success 'Oh My Zsh installed'
   fi
 
-  info 'Installing zsh plugins'
-  if ! [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
-    git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git \
-      ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting > /dev/null
-  elif ! [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
-    git clone --quiet https://github.com/zsh-users/zsh-autosuggestions.git \
-      ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions > /dev/null
-  fi
-  success 'Plugins installed'
+  set +e # disable 'errexit' option
+
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+    "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" > /dev/null 2>&1
+  success 'zsh-syntax-highlighting plugin installed'
+
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git \
+    "$ZSH_CUSTOM/plugins/zsh-autosuggestions" > /dev/null 2>&1
+  success 'zsh-autosuggestions plugin installed'
+  
+  set -e # re-enable 'errexit' option
 }
 
 install_packets_linux() {
-  info 'Uptating sources'
+  info 'Updating package index'
   sudo apt-get update -y > /dev/null
+  success 'Package index updated'
 
   info 'Installing git'
   sudo apt-get install -y git > /dev/null
