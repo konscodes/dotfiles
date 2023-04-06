@@ -4,7 +4,7 @@
 
 ## Get started with the bash script
 ```bash
-curl -sSL https://raw.githubusercontent.com/konscodes/dotfiles/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/konscodes/dotfiles/main/scripts/install.sh | bash
 ```
 
 ## Creating a new repo and pushing files
