@@ -110,22 +110,22 @@ install_packets_mac() {
   fi
   
   info 'Installing git'
-  brew install --quiet git
+  brew install --quiet git > /dev/null
 
   info 'Installing neovim'
-  brew install --quiet neovim
+  brew install --quiet neovim > /dev/null
   
   info 'Installing exa'
-  brew install --quiet exa
+  brew install --quiet exa > /dev/null
 
   info 'Installing peco'
-  brew install --quiet peco
+  brew install --quiet peco > /dev/null
 
   info 'Installing ghq'
-  brew install --quiet ghq
+  brew install --quiet ghq > /dev/null
 
   info 'Installing glow'
-  brew install --quiet glow
+  brew install --quiet glow > /dev/null
 }
 
 
