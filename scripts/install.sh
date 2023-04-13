@@ -70,6 +70,9 @@ install_packets_linux() {
   sudo apt-get update -y > /dev/null
   success 'Package index updated'
 
+  info 'Installing unzip'
+  sudo apt-get install unzip -y > /dev/null
+
   info 'Installing git'
   sudo apt-get install -y git > /dev/null
 
