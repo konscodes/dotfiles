@@ -8,6 +8,7 @@
 - [ ] Complete Trashbot main functionality (send reminders to group on schedule)
 
 ## Todo 
-- [ ] code the scheduled message sent to the group
-- [ ] code the JSON as db for names and rotate on schedule
+- [x] code the scheduled message sent to the group
+- [x] code the JSON as db for names and rotate on schedule
+- [ ] add the message notification to the group when the schedule rotated
 
