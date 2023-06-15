@@ -61,4 +61,4 @@ bindkey '^]' peco-projects # ctrl + ]
 bindkey '^[' peco-select-history # ctrl + [
 
 # Run the note with glow on terminal start
-glow $HOME/notes/modt.md
+#glow $HOME/notes/modt.md
