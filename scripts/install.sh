@@ -111,6 +111,9 @@ install_packets_mac() {
       "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
     success 'Homebrew installed'
   fi
+  info 'Addign brew to PATH'
+  (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/$USER/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
   
   info 'Installing git'
   brew install --quiet git > /dev/null
