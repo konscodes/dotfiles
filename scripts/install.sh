@@ -145,7 +145,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     install_packets_mac
 fi
 
-install_dotfiles
 install_packets
+install_dotfiles
+
 success 'Completed'
 zsh
