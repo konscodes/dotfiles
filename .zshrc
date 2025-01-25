@@ -32,7 +32,7 @@ source $ZSH/oh-my-zsh.sh
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' # Git alias for config repo
 alias py='python3' # Windows python instance for WSL
 alias winpy='python.exe' # Local python instance
-alias ll='exa -lah --icons' # Modern replacement for ls 
+alias ll='eza -lah --icons' # Modern replacement for ls 
 alias excel='/mnt/c/Program\ Files/Microsoft\ Office/Office15/EXCEL.EXE' # Excel alias for WSL
 alias vim='nvim' # Replace vim with nvim
 
