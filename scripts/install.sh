@@ -82,7 +82,7 @@ install_packets_linux() {
   info 'Installing neovim'
   sudo apt-get install -y neovim python3-neovim > /dev/null
 
-  info 'Installing exa'
+  info 'Installing eza'
   wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
   sudo chmod +x eza && sudo chown root:root eza && sudo mv eza /usr/local/bin/eza
   rm -rf eza*
@@ -121,7 +121,7 @@ install_packets_mac() {
   info 'Installing neovim'
   brew install --quiet neovim > /dev/null
   
-  info 'Installing exa'
+  info 'Installing eza'
   brew install --quiet eza > /dev/null
 
   info 'Installing peco'
