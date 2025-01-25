@@ -83,9 +83,9 @@ install_packets_linux() {
   sudo apt-get install -y neovim python3-neovim > /dev/null
 
   info 'Installing exa'
-  curl -sLO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
-  unzip -q exa-linux-x86_64-v0.10.1.zip -d ./exa && sudo mv exa/bin/exa /usr/local/bin/
-  rm -rf exa*
+  wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
+  sudo chmod +x eza && sudo chown root:root eza && sudo mv eza /usr/local/bin/eza
+  rm -rf eza*
 
   info 'Installing peco'
   sudo apt-get install -y peco > /dev/null
@@ -122,7 +122,7 @@ install_packets_mac() {
   brew install --quiet neovim > /dev/null
   
   info 'Installing exa'
-  brew install --quiet exa > /dev/null
+  brew install --quiet eza > /dev/null
 
   info 'Installing peco'
   brew install --quiet peco > /dev/null
